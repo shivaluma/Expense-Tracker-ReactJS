@@ -75,3 +75,53 @@ h4 {
 .money.expense {
   color: #c0392b;
 }
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list > li {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list > li.expense {
+  border-right: 5px solid #c0392b;
+}
+
+.list > li.income {
+  border-right: 5px solid #2ecc71;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  background-color: #9c88ff;
+  color: white;
+  font-size: 16px;
+  border: 0;
+  box-shadow: var(--box-shadow);
+}
