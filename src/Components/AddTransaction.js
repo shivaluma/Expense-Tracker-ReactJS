@@ -1,6 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
+import { GlobalContext } from '../Contexts/GlobalState';
 
 const AddTransaction = params => {
+  const { addTransaction } = useContext(GlobalContext);
   const textRef = useRef(null);
   const amountRef = useRef(null);
   return (
@@ -28,7 +30,17 @@ const AddTransaction = params => {
             placeholder='Enter amount...'
           />
         </div>
-        <button className='btn'>Add transaction</button>
+        <button
+          className='btn'
+          onClick={e => {
+            e.preventDefault();
+            const text = textRef.current.value;
+            const amount = Number(amountRef.current.value);
+            addTransaction(text, amount);
+          }}
+        >
+          Add transaction
+        </button>
       </form>
     </>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 export const Transaction = ({ transaction }) => {
   const isNegative = Number(transaction.amount) < 0;
   return (
-    <li key={transaction.key} className={isNegative ? 'income' : 'expense'}>
+    <li className={isNegative ? 'expense' : 'income'}>
       {transaction.text}
       <span>
         {(isNegative ? '-' : '') +

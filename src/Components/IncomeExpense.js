@@ -22,7 +22,7 @@ const IncomeExpense = props => {
       <div>
         <h4>Expense</h4>
         <p id='money-expense' className='money expense'>
-          -${expense}
+          ${expense}
         </p>
       </div>
     </div>
