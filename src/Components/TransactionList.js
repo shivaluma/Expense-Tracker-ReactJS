@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../Contexts/GlobalState';
+import { Transaction } from './Transaction';
 
-export default params => {
+const TransactionList = params => {
+  const { transaction } = useContext(GlobalContext);
+
   return (
     <>
       <h3>History</h3>
       <ul id='list' className='list'>
-        <li className='expense'>
-          Cash <span>$13.00</span>
-        </li>
-        <li className='income'>
-          Cash <span>$15.00</span>
-        </li>
+        {transaction.map(el => (
+          <Transaction transaction={el} />
+        ))}
       </ul>
     </>
   );
 };
+
+export default TransactionList;

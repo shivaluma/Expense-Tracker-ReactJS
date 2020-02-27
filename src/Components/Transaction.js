@@ -1,9 +1,15 @@
 import React from 'react';
 
-export default params => {
+export const Transaction = ({ transaction }) => {
+  const isNegative = Number(transaction.amount) < 0;
   return (
-    <>
-      <h3>History</h3>
-    </>
+    <li key={transaction.key} className={isNegative ? 'income' : 'expense'}>
+      {transaction.text}
+      <span>
+        {(isNegative ? '-' : '') +
+          '$' +
+          Math.abs(Number(transaction.amount)).toString()}
+      </span>
+    </li>
   );
 };
